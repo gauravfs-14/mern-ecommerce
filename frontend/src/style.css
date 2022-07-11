@@ -13,6 +13,7 @@ nav{
     background-color: rgb(50, 86, 119);
     color: white;
     padding: 0 2rem;
+    margin-bottom: 2rem;
 }
 nav .logo{
     font-weight: bolder;
@@ -30,4 +31,21 @@ nav .search input{
     color: white;
     padding: .2rem;
     border-bottom: 2px solid white;
+}
+.products-container{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 2rem;
+    cursor: pointer;
+}
+.product{
+    background-color: rgb(50, 86, 119);
+    padding: 2rem;
+    color: white;
+    border-radius: 1rem;
+}
+a{
+    text-decoration: none;
 }

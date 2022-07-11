@@ -1,4 +1,5 @@
 import React from "react";
+import { products } from "./data";
 import "./style.css";
 
 function App() {
@@ -16,6 +17,17 @@ function App() {
           <input type="search" placeholder="Search..." />
         </div>
       </nav>
+      <div className="products-container">
+        {products.map((product) => (
+          <a href={`/product/${product.id}`}>
+            <div className="product">
+              <h4>{product.name}</h4>
+              <p>{product.price}</p>
+              <p>Categories: {product.categories}</p>
+            </div>
+          </a>
+        ))}
+      </div>
     </>
   );
 }
