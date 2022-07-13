@@ -1,4 +1,4 @@
-export const products = [
+const products = [
   {
     id: "12asd21sd",
     name: "Dell Laptop",
@@ -36,3 +36,5 @@ export const products = [
     categories: "smartphone",
   },
 ];
+
+module.exports = products;
