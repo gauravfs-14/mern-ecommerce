@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import ProductCard from "./ProductCard";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -29,7 +29,6 @@ function Home() {
       try {
         const result = await axios.get("/api/products");
         dispatch({ type: "FETCH_SUCCESS", payload: result.data });
-        // setproduct(res.data)
       } catch (error) {
         dispatch({ type: "FETCH_FAIL", payload: error.message });
       }
@@ -44,15 +43,7 @@ function Home() {
         ) : error ? (
           <div>{error}</div>
         ) : (
-          product.map((product) => (
-            <Link to={`/product/${product.id}`} key={product.id}>
-              <div className="product">
-                <h4>{product.name}</h4>
-                <p>{product.price}</p>
-                <p>Categories: {product.categories}</p>
-              </div>
-            </Link>
-          ))
+          product.map((product) => <ProductCard product={product} />)
         )}
       </div>
     </>
