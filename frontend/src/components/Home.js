@@ -43,7 +43,9 @@ function Home() {
         ) : error ? (
           <div>{error}</div>
         ) : (
-          product.map((product) => <ProductCard product={product} />)
+          product.map((product) => (
+            <ProductCard product={product} key={product.id} />
+          ))
         )}
       </div>
     </>
